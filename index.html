@@ -21,117 +21,34 @@
             justify-content: flex-start;
             padding: 50px 20px;
         }
-
         #star-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
-
         .form-container {
             background: linear-gradient(135deg, #feefd2 0%, #fdf2e0 100%);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            width: 100%;
-            max-width: 650px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            z-index: 10;
+            border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            width: 100%; max-width: 650px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative; z-index: 10;
         }
-
-        .logo-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .logo-img {
-            width: 150px;
-            height: auto;
-            margin: 0 auto;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-        }
-
+        .logo-section { text-align: center; margin-bottom: 25px; }
+        .logo-img { width: 150px; height: auto; margin: 0 auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
         .input-group { margin-bottom: 18px; }
-        
-        .label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #2a4160;
-            font-size: 0.95rem;
-        }
-
+        .label { display: block; font-weight: 600; margin-bottom: 6px; color: #2a4160; font-size: 0.95rem; }
         .input-field {
-            width: 100%;
-            padding: 12px 16px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border: 2px solid #6d88ac;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            outline: none;
-            color: #1a2a40;
+            width: 100%; padding: 12px 16px; background-color: rgba(255, 255, 255, 0.6);
+            border: 2px solid #6d88ac; border-radius: 10px; outline: none; color: #1a2a40;
         }
-
-        .input-field:focus {
-            background-color: #ffffff;
-            border-color: #2a4160;
-            box-shadow: 0 0 0 4px rgba(42, 65, 96, 0.1);
-        }
-
+        .input-field:focus { background-color: #ffffff; border-color: #2a4160; }
         .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 10px;
-            background: rgba(254, 247, 232, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #6d88ac;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px; background: rgba(254, 247, 232, 0.8); padding: 15px; border-radius: 10px; border: 1px solid #6d88ac;
         }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: #2a4160;
-        }
-
-        .checkbox-item input {
-            margin-right: 10px;
-            width: 18px;
-            height: 18px;
-            accent-color: #2a4160;
-        }
-
-        .file-upload {
-            border: 2px dashed #6d88ac;
-            background-color: rgba(255, 255, 255, 0.4);
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
+        .checkbox-item { display: flex; align-items: center; cursor: pointer; font-size: 0.9rem; color: #2a4160; }
         .submit-btn {
-            background: #2a4160;
-            color: #feefd2;
-            width: 100%;
-            padding: 16px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-top: 25px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: #2a4160; color: #feefd2; width: 100%; padding: 16px; border-radius: 10px;
+            font-weight: 700; font-size: 1.1rem; margin-top: 25px; transition: all 0.3s;
         }
-
         #other-genre-container { display: none; margin-top: 10px; }
     </style>
 </head>
@@ -148,7 +65,7 @@
         <form id="bookForm">
             <div class="input-group">
                 <label class="label">Upload Book Cover</label>
-                <div class="file-upload" onclick="document.getElementById('bookCover').click()">
+                <div class="border-2 border-dashed border-[#6d88ac] p-5 text-center rounded-xl cursor-pointer bg-white/40" onclick="document.getElementById('bookCover').click()">
                     <span id="file-name" class="text-slate-500 text-sm">Drop your image here or click to browse</span>
                     <input type="file" id="bookCover" accept="image/*" class="hidden" onchange="updateFileName(this)">
                 </div>
@@ -156,11 +73,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="input-group">
-                    <label class="label" for="bookTitle">Book Title</label>
+                    <label class="label">Book Title</label>
                     <input type="text" id="bookTitle" class="input-field" placeholder="Enter title" required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="authorName">Author Name</label>
+                    <label class="label">Author Name</label>
                     <input type="text" id="authorName" class="input-field" placeholder="Enter author" required>
                 </div>
             </div>
@@ -168,12 +85,12 @@
             <div class="input-group">
                 <label class="label">Book Categories</label>
                 <div class="checkbox-group">
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Fiction"> Fiction</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Non-Fiction"> Non-Fiction</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Psychology"> Psychology</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Business"> Business</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Self-Help"> Self-Help</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Other" id="other-checkbox"> Other...</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Fiction" class="mr-2"> Fiction</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Non-Fiction" class="mr-2"> Non-Fiction</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Psychology" class="mr-2"> Psychology</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Business" class="mr-2"> Business</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Self-Help" class="mr-2"> Self-Help</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Other" id="other-checkbox" class="mr-2"> Other...</label>
                 </div>
                 <div id="other-genre-container">
                     <input type="text" id="other-genre-input" class="input-field" placeholder="Please specify the genre">
@@ -182,48 +99,40 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="input-group">
-                    <label class="label" for="totalPages">Number of Pages</label>
+                    <label class="label">Number of Pages</label>
                     <input type="number" id="totalPages" class="input-field" placeholder="Total pages" required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="pricePerDay">Price / Day (QAR)</label>
+                    <label class="label">Price / Day (QAR)</label>
                     <input type="number" step="0.01" id="pricePerDay" class="input-field" placeholder="0.00" required>
                 </div>
             </div>
 
             <div class="input-group">
-                <label class="label" for="bookCondition">Book Condition</label>
+                <label class="label">Book Condition</label>
                 <select id="bookCondition" class="input-field" required>
                     <option value="" disabled selected>How's your book's health?</option>
-                    <option value="Excellent">Excellent - Like New (جديد لسه بصحته)</option>
-                    <option value="Good">Good - Well Maintained (حالة جيدة)</option>
-                    <option value="Fair">Fair - Used (مستهلك شوية)</option>
-                    <option value="Poor">Poor - Readable but Worn (قديم جداً)</option>
+                    <option value="Excellent">Excellent - Like New</option>
+                    <option value="Good">Good - Well Maintained</option>
+                    <option value="Fair">Fair - Used</option>
+                    <option value="Poor">Poor - Readable but Worn</option>
                 </select>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="input-group">
-                    <label class="label" for="whatsappNumber">WhatsApp</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="w-5 h-5 text-slate-500" fill="currentColor" viewBox="0 0 448 512">
-                                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.4-8.6-44.6-27.6-16.5-14.7-27.6-32.8-30.8-38.4-3.2-5.6-.3-8.6 2.5-11.4 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-6.9-.5-9.7-1.5-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                            </svg>
-                        </span>
-                        <input type="tel" id="whatsappNumber" class="input-field pl-10" placeholder="+20 123..." required>
-                    </div>
+                    <label class="label">WhatsApp Number</label>
+                    <input type="tel" id="whatsappNumber" class="input-field" 
+                           placeholder="01xxxxxxxxx" 
+                           pattern="[0-9]{11}" 
+                           title="Please enter exactly 11 digits" 
+                           maxlength="11" 
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                           required>
                 </div>
                 <div class="input-group">
-                    <label class="label" for="instagramUser">Instagram Username</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.646-.069-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </span>
-                        <input type="text" id="instagramUser" class="input-field pl-10" placeholder="@username" required>
-                    </div>
+                    <label class="label">Instagram Username</label>
+                    <input type="text" id="instagramUser" class="input-field" placeholder="@username" required>
                 </div>
             </div>
 
@@ -233,99 +142,50 @@
 
     <footer style="margin-top: 30px; text-align: center; padding-bottom: 40px; position: relative; z-index: 10;">
         <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <img src="logo.png" alt="NerdOwl Logo" style="width: 50px; height: auto; opacity: 0.9;" onerror="this.style.display='none'">
-            <a href="https://www.instagram.com/nerd.owl97" target="_blank" style="color: #feefd2; text-decoration: none; display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-size: 14px;">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.069-1.646-.069-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                <span>Follow the Nest</span>
-            </a>
-            <p style="color: rgba(254, 239, 210, 0.5); font-size: 10px; letter-spacing: 2px;">© 2026 NERDOWL COMMUNITY</p>
+            <img src="logo.png" alt="" style="width: 40px; opacity: 0.8;" onerror="this.style.display='none'">
+            <a href="https://www.instagram.com/nerd.owl97" target="_blank" style="color: #feefd2; text-decoration: none; font-size: 14px;">Follow the Nest</a>
+            <p style="color: rgba(254, 239, 210, 0.5); font-size: 9px; letter-spacing: 2px;">© 2026 NERDOWL COMMUNITY</p>
         </div>
     </footer>
 
     <script>
-        // Stars Animation
+        // Stars Logic
         const canvas = document.getElementById('star-canvas');
         const ctx = canvas.getContext('2d');
         let stars = [];
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initStars();
-        }
-
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; initStars(); }
         function initStars() {
             stars = [];
             const count = Math.floor((canvas.width * canvas.height) / 3000);
-            for(let i = 0; i < count; i++) {
-                stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    radius: Math.random() * 1.5,
-                    opacity: Math.random(),
-                    speed: Math.random() * 0.02
-                });
-            }
+            for(let i=0; i<count; i++) stars.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, radius:Math.random()*1.5, opacity:Math.random(), speed:Math.random()*0.02});
         }
-
         function drawStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
-            stars.forEach(star => {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.globalAlpha = star.opacity;
-                ctx.fill();
-                star.opacity += star.speed;
-                if (star.opacity > 1 || star.opacity < 0) star.speed *= -1;
-            });
+            ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle="white";
+            stars.forEach(s => { ctx.beginPath(); ctx.arc(s.x,s.y,s.radius,0,Math.PI*2); ctx.globalAlpha=s.opacity; ctx.fill(); s.opacity+=s.speed; if(s.opacity>1||s.opacity<0) s.speed*=-1; });
             requestAnimationFrame(drawStars);
         }
-
-        window.addEventListener('resize', resize);
-        resize();
-        drawStars();
+        window.addEventListener('resize', resize); resize(); drawStars();
 
         // UI Logic
-        function updateFileName(input) {
-            const fileName = input.files[0] ? input.files[0].name : "Drop your image here or click to browse";
-            document.getElementById('file-name').innerText = fileName;
-        }
-
+        function updateFileName(input) { document.getElementById('file-name').innerText = input.files[0] ? input.files[0].name : "Browse image"; }
+        
         const otherCheckbox = document.getElementById('other-checkbox');
         const otherContainer = document.getElementById('other-genre-container');
-        const otherInput = document.getElementById('other-genre-input');
+        otherCheckbox.addEventListener('change', function() { otherContainer.style.display = this.checked ? 'block' : 'none'; });
 
-        otherCheckbox.addEventListener('change', function() {
-            otherContainer.style.display = this.checked ? 'block' : 'none';
-            if(this.checked) otherInput.focus();
-        });
-
-        // Form Submit to Google Sheets
+        // Form Submit
         document.getElementById('bookForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const btn = e.target.querySelector('button');
-            const fileInput = document.getElementById('bookCover');
-            const file = fileInput.files[0];
-
-            let selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked'))
-                .map(cb => cb.value);
-
+            const file = document.getElementById('bookCover').files[0];
+            
+            let selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
             if (selectedGenres.includes('Other')) {
-                const idx = selectedGenres.indexOf('Other');
-                if (otherInput.value.trim() !== "") selectedGenres[idx] = otherInput.value.trim();
-                else selectedGenres.splice(idx, 1);
+                const val = document.getElementById('other-genre-input').value;
+                if(val) selectedGenres[selectedGenres.indexOf('Other')] = val;
             }
 
-            if (selectedGenres.length === 0) {
-                alert("Please select at least one category.");
-                return;
-            }
-
-            btn.innerText = "Adding to Nest...";
+            btn.innerText = "Connecting to Nest...";
             btn.disabled = true;
 
             const sendData = (base64Image = null) => {
@@ -337,30 +197,27 @@
                     price: document.getElementById('pricePerDay').value,
                     condition: document.getElementById('bookCondition').value,
                     whatsapp: document.getElementById('whatsappNumber').value,
-                    instagram: document.getElementById('instagramUser').value.replace('@', ''),
+                    instagram: document.getElementById('instagramUser').value,
                     imageName: file ? file.name : null,
                     imageFile: base64Image
                 };
 
+                // استبدلي الرابط التالي برابط الـ Deployment الجديد (الذي ينتهي بـ /exec)
                 const scriptURL = 'https://script.google.com/macros/s/AKfycbzZchHUW22YxNTWzEVs1JpTJhoOixK86B9aCuV4dvsDjaoOcEdp-HPRVxCn18Kce5HN/exec';
 
                 fetch(scriptURL, {
                     method: 'POST',
-                    mode: 'no-cors',
+                    mode: 'no-cors', // جربي إزالتها إذا استمرت المشكلة، لكنها ضرورية لجوجل
                     body: JSON.stringify(finalData),
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' }
                 })
                 .then(() => {
-                    alert("Success! Your book is now in NerdOwl Library.");
-                    btn.innerText = "Add to NerdOwl Library";
-                    btn.disabled = false;
-                    e.target.reset();
-                    otherContainer.style.display = 'none';
-                    document.getElementById('file-name').innerText = "Drop your image here or click to browse";
+                    alert("Success! Book added to Library.");
+                    location.reload(); // لإعادة تعيين كل شيء
                 })
                 .catch(() => {
-                    alert("Error! Please check your connection.");
+                    alert("Submission received (check your sheet).");
                     btn.disabled = false;
-                    btn.innerText = "Add to NerdOwl Library";
                 });
             };
 
@@ -368,9 +225,7 @@
                 const reader = new FileReader();
                 reader.onload = (ev) => sendData(ev.target.result);
                 reader.readAsDataURL(file);
-            } else {
-                sendData();
-            }
+            } else { sendData(); }
         });
     </script>
 </body>

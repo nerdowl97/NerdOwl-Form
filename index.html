@@ -45,10 +45,42 @@
             gap: 10px; background: rgba(254, 247, 232, 0.8); padding: 15px; border-radius: 10px; border: 1px solid #6d88ac;
         }
         .checkbox-item { display: flex; align-items: center; cursor: pointer; font-size: 0.9rem; color: #2a4160; }
-        .submit-btn {
-            background: #2a4160; color: #feefd2; width: 100%; padding: 16px; border-radius: 10px;
-            font-weight: 700; font-size: 1.1rem; margin-top: 25px; transition: all 0.3s;
-        }
+        /* تنسيق الزر المحدث */
+.submit-btn {
+    background: #2a4160; /* اللون الأصلي */
+    color: #feefd2;
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    transition: all 0.2s ease-in-out; /* حركة ناعمة */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    border: none;
+}
+
+/* عند تمرير الماوس فوق الزر - يفتح لونه قليلاً */
+.submit-btn:hover {
+    background: #36547c;
+    transform: translateY(-2px); /* رفعة بسيطة للأعلى */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* عند الضغط الفعلي على الزر - يتغير لونه ويصغر حجمه قليلاً */
+.submit-btn:active {
+    background: #1a2a40; /* لون أغمق عند الضغط */
+    transform: scale(0.98); /* تأثير الضغطة (يصغر 2%) */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* حالة الزر أثناء إرسال البيانات (Disabled) */
+.submit-btn:disabled {
+    background: #6d88ac;
+    cursor: not-allowed;
+    transform: none;
+}
         #other-genre-container { display: none; margin-top: 10px; }
     </style>
 </head>
@@ -85,11 +117,11 @@
             <div class="input-group">
                 <label class="label">Book Categories</label>
                 <div class="checkbox-group">
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Fiction" class="mr-2"> Romance</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Non-Fiction" class="mr-2"> Social</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Psychology" class="mr-2"> Fantasy / Sci-Fi</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Business" class="mr-2"> Mystery / Crime</label>
-                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Self-Help" class="mr-2"> Biography</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Romance" class="mr-2"> Romance</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Social" class="mr-2"> Social</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Fantasy / Sci-Fi" class="mr-2"> Fantasy / Sci-Fi</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Mystery / Crime" class="mr-2"> Mystery / Crime</label>
+                    <label class="checkbox-item"><input type="checkbox" name="genre" value="Biography" class="mr-2"> Biography</label>
                     <label class="checkbox-item"><input type="checkbox" name="genre" value="Other" id="other-checkbox" class="mr-2"> Other...</label>
                 </div>
                 <div id="other-genre-container">

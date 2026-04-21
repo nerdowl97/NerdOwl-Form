@@ -255,20 +255,26 @@
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' }
                 })
                 .then(() => {
-                   Swal.fire({
+                  Swal.fire({
     title: 'Success!',
     text: 'Your book is now in NerdOwl Library.',
     icon: 'success',
-    background: '#feefd2', // نفس لون الفورم بتاعتك
-    confirmButtonColor: '#2a4160',
-    confirmButtonText: 'Great!',
+    background: '#feefd2',
     iconColor: '#2a4160',
     color: '#1a2a40',
-    timer: 3000, // تختفي لوحدها بعد 3 ثواني
-    timerProgressBar: true
+    showConfirmButton: false, // سنخفي الزرار لتكون أرقى
+    timer: 2500,
+    timerProgressBar: true,
+    
+    // هذا الجزء هو المسؤول عن الحواف المستديرة
+    didOpen: (toast) => {
+        const popup = Swal.getPopup();
+        popup.style.borderRadius = '25px'; // حواف مستديرة ناعمة
+        popup.style.border = '1px solid rgba(42, 65, 96, 0.2)'; // إطار خفيف جداً
+    }
 }).then(() => {
-    location.reload(); // إعادة تحميل الصفحة بعد ما الرسالة تقفل
-}); // لإعادة تعيين كل شيء
+    location.reload();
+});
                 })
                 .catch(() => {
                    Swal.fire({

@@ -83,6 +83,7 @@
 }
         #other-genre-container { display: none; margin-top: 10px; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -254,12 +255,29 @@
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' }
                 })
                 .then(() => {
-                    alert("Success! Book added to Library.");
-                    location.reload(); // لإعادة تعيين كل شيء
+                   Swal.fire({
+    title: 'Success!',
+    text: 'Your book is now in NerdOwl Library.',
+    icon: 'success',
+    background: '#feefd2', // نفس لون الفورم بتاعتك
+    confirmButtonColor: '#2a4160',
+    confirmButtonText: 'Great!',
+    iconColor: '#2a4160',
+    color: '#1a2a40',
+    timer: 3000, // تختفي لوحدها بعد 3 ثواني
+    timerProgressBar: true
+}).then(() => {
+    location.reload(); // إعادة تحميل الصفحة بعد ما الرسالة تقفل
+}); // لإعادة تعيين كل شيء
                 })
                 .catch(() => {
-                    alert("Submission received (check your sheet).");
-                    btn.disabled = false;
+                   Swal.fire({
+    title: 'Oops!',
+    text: 'Something went wrong. Please try again.',
+    icon: 'error',
+    background: '#feefd2',
+    confirmButtonColor: '#2a4160'
+});
                 });
             };
 
